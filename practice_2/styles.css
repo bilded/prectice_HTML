@@ -1,0 +1,344 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #fcebd9;
+  background-image: url("acintosh HD/Users/kimminji/website_made/practice_2/background.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+  
+  header {
+    background-color: #ffd3b6; /* 큰 타이틀 색 변경 */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 32px; /* 폰트 크기 변경 */
+    color: #f58220; /* 폰트 색상 변경 */
+    margin: 0; /* 여백 제거 */
+  }
+  
+  nav {
+    background-color: #ffd3b6 ; /* 상단바 색 조절  #ffd3b6 */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav button {
+    margin: 0 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #f9a03f; /* 배경색 변경 */
+    color: #fff; /* 폰트 색상 변경 */
+    border: none; /* 테두리 제거 */
+    border-radius: 20px; /* 버튼을 둥글게 만들기 */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* 부드러운 효과 추가 */
+  }
+  
+  nav button:hover {
+    background-color: #f58220; /* 버튼 마우스 가져다 두면  배경색 변경 */
+  }
+  
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+  }
+  
+  section {
+    text-align: center;
+  }
+  
+  
+  h2 {
+    font-size: 24px; /* 폰트 크기 변경 */
+    color: #f58220; /* 폰트 색상 변경 */
+    margin-top: 0; /* 여백 제거 */
+  }
+
+  section.hidden {
+    display: none;
+  }    .captured-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 5px;
+    transform: scaleX(-1);
+    }
+    .capture-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 20px;
+        background-color: #f44336;
+        border: none;
+        border-radius: 50px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .capture-btn i {
+        margin-right: 5px;
+    }
+
+    .capture-btn:hover {
+        background-color: #e53935;
+    }
+  
+  #video {
+    transform: scaleX(-1);
+  }
+
+  .media-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#playButton {
+  background-color: #f9a03f;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+#playButton:hover {
+  background-color: #f58220;
+}
+
+#playButton:focus {
+  outline: none;
+}
+
+.captured-photos-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  margin-top: 20px;
+}
+
+.captured-photo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* 케이크 섹션 스타일 */
+#cakeSection {
+  text-align: center;
+}
+
+/* 미디어 컨테이너 스타일 */
+.media-container {
+  margin-top: 50px;
+}
+
+.media-container img {
+  width: 300px;
+  height: auto;
+}
+
+.media-container p {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff5e81;
+}
+
+/* 케이크 버튼 스타일 */
+#cakeButton {
+  margin-top: 20px;
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #ff5e81;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#cakeButton:hover {
+  background-color: #ff367c;
+}
+
+
+#video,
+.photo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  overflow-x: auto;
+  padding: 10px;
+  border: 2px dashed #a20f0f9e;
+  white-space: nowrap; /* 가로 스크롤을 위한 설정 */
+}
+
+.photo-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.photo-container::-webkit-scrollbar-thumb {
+  background-color: #820a0a;
+  border-radius: 4px;
+}
+
+.photo-container::-webkit-scrollbar-track {
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  border-style: dashed;
+  border-width: 1px;
+}
+
+.photo-container img {
+  width: 1px;
+  height: 1px; /* 고정된 사진 크기 설정 */
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.photo-container img.captured-photo {
+  width: auto;
+  height: 1px; /* 고정된 사진 크기 설정 */
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.photo-container img:hover {
+  transform: scale(1.2);
+}
+
+
+  
+  #photo {
+    margin-top: 10px;
+    width: 200px;
+    border-radius: 10px; /* 이미지를 둥글게 만들기 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+  }
+
+  
+  #capture {
+    position: absolute;
+    top: 30%;
+    transform: translateY(30%);
+    left: 10px;
+    z-index: 1;
+  }
+  .capture-btn {
+    background-color: #f58220;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(232, 127, 41, 0.731);
+    transition: background-color 0.3s ease;
+  }
+  
+  .capture-btn:hover {
+    background-color: #f58220;
+  }
+  
+  .capture-btn:focus {
+    outline: none;
+  }
+  
+  .image-container {
+    display: flex;
+  }
+  
+  .image-container img {
+    width: 50%;
+  }
+  
+  
+  #messageForm {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #messageInput {
+    width: 300px;
+    padding: 5px;
+    font-size: 16px;
+    border: none; /* 테두리 제거 */
+    border-radius: 20px; /* 입력 필드를 둥글게 만들기 */
+    margin-right: 5px; /* 오른쪽 여백 추가 */
+  }
+  
+  #messageInput:focus {
+    outline: none; /* 포커스 시 테두리 제거 */
+  }
+
+  .guestbook-container {
+    max-height: 200px; /* 최대 높이 설정 */
+    overflow-y: auto; /* 수직 스크롤바 설정 */
+  }
+  
+  
+  button[type="submit"] {
+    background-color: #f9a03f; /* 배경색 변경 */
+    color: #fff; /* 폰트 색상 변경 */
+    border: none; /* 테두리 제거 */
+    border-radius: 20px; /* 버튼을 둥글게 만들기 */
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* 부드러운 효과 추가 */
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #f58220; /* 호버 시 배경색 변경 */
+  }
+  /*  사진 저장하기 꾸미기 
+  .captured-photos-title {
+  font-size: 24px;
+  color: pink;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.captured-photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.captured-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 5px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+*/
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  ul li {
+    font-size: 16px;
+    color: #f58220; /* 폰트 색상 변경 */
+    margin-bottom: 5px; /* 아이템 간격 추가 */
+  }

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>생일 축하 사이트</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .image-container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .image-container img {
+      width: 400px; /* 이미지의 너비를 200px로 조절 */
+      height: auto; /* 이미지의 높이를 자동으로 조절하여 비율 유지 */
+    }
+
+    .hidden {
+        display: none;
+      }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>생일 축하해</h1>
+  </header>
+
+  <nav>
+    <button id="homeBtn">홈</button>
+    <button id="cameraBtn">카메라</button>
+    <button id="messageBtn">메세지</button>
+    <button id="cakeBtn">케이크</button>
+  </nav>
+
+  <main>
+    <section id="homeSection">
+      <h2>❤️ 우리 금쪽이의 생일이야 ❤️</h2>
+      <div>이름</div>
+      <div class="image-container">
+        <img src="macintosh HD/Users/kimminji/website_made/practice_2/image5.png" alt="Image 5" width="400" height="300">
+        <img src="macintosh HD/Users/kimminji/website_made/practice_2/image1.jpeg" alt="Image 1">
+      </div>
+      <button id="playButton">음악 재생</button>
+    </section>
+    
+      
+    <section id="cameraSection" class="hidden">
+      <h2>사진 찍기</h2>
+      <div class="media-container">
+          <video id="video" width="400" height="300" autoplay></video>
+      </div>
+      <div class="button-container">
+        <button id="capture" class="capture-btn">사진 촬영</button>
+      </div>
+      <canvas id="canvas" width="400" height="300"></canvas>
+
+      </div>
+    </section>
+
+    <!-- 사진 저장하기 코드
+          <section id="cameraSection" class="hidden">
+      <h2>사진 찍기</h2>
+      <div class="media-container">
+        <video id="video" width="400" height="300" autoplay></video>
+      </div>
+      <div class="button-container">
+        <button id="capture" class="capture-btn">사진 촬영</button>
+      </div>
+      <canvas id="canvas" width="400" height="300"></canvas>
+      <div class="captured-photos-container">
+        <h3 class="captured-photos-title">저장된 이미지</h3>
+        <div class="captured-photos"></div>
+      </div>
+    </section>
+    -->
+
+
+
+    <section id="messageSection" class="hidden">
+      <h2>방명록</h2>
+      <form id="messageForm">
+        <input type="text" id="messageInput" placeholder="메시지를 입력하세요">
+        <button type="submit">전송</button>
+      </form>
+      <div class="guestbook-container">
+        <!-- 글이 작성되는 영역 -->
+        <div class="guestbook-content">
+          <!-- 여기에 작성된 글들이 동적으로 추가됩니다 -->
+          <ul id="messageList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="cakeSection" class="hidden">
+      <h2>케이크</h2>
+      <div class="media-container">
+        <img src="macintosh HD/Users/kimminji/website_made/practice_2/cake.gif" alt="Cake GIF">
+        <p>축하합니다!<br>생일 축하해요!</p>
+      </div>
+      <button id="cakeButton">toddlf</button>
+    </section>
+    
+    
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

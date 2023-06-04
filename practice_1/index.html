@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>생일 축하 사이트</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .image-container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .image-container img {
+      width: 400px;
+      height: auto;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>생일 축하 사이트</h1>
+  </header>
+
+  <nav>
+    <button id="homeBtn">홈</button>
+    <button id="cameraBtn">카메라</button>
+    <button id="messageBtn">메세지</button>
+    <button id="cakeBtn">케이크</button>
+  </nav>
+
+  <main>
+    <section id="homeSection">
+      <h2>Home</h2>
+      <button id="playButton">음악 재생</button>
+      <div>❤️오늘의 주인공❤️</div>
+      <div class="image-container">
+        <img src="macintosh HD/Users/kimminji/website_made/practice_2/image1.jpeg" alt="Image 1">
+        <img src="macintosh HD/Users/kimminji/website_made/practice_2/image3.jpeg" alt="Image 3">
+      </div>
+    </section>
+
+    <section id="cameraSection" class="hidden">
+      <h2>사진 찍기</h2>
+      <div class="media-container">
+          <video id="video" width="400" height="300" autoplay></video>
+      </div>
+      <div class="button-container">
+        <button id="capture" class="capture-btn">사진 촬영</button>
+      </div>
+      <canvas id="canvas" width="400" height="300"></canvas>
+      <div class="captured-photos-container">
+        <h3>저장된 이미지</h3>
+        <div class="captured-photos"></div>
+      </div>
+    </section>
+
+    <section id="messageSection" class="hidden">
+      <h2>방명록</h2>
+      <form id="messageForm">
+        <input type="text" id="messageInput" placeholder="메시지를 입력하세요">
+        <button type="submit">전송</button>
+      </form>
+      <div class="guestbook-container">
+        <div class="guestbook-content">
+          <ul id="messageList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="cakeSection" class="hidden">
+      <h2>케이크</h2>
+      <div class="media-container">
+        <img src="macintosh HD/Users/kimminji/website_made/practice_2/cake.gif" alt="Cake GIF">
+      </div>
+      <button id="cakeButton">케이크 음악 재생</button>
+    </section>
+  </main>
+
+  <audio id="bgMusic" src="background_music.mp3" autoplay loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

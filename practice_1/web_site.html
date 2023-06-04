@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>생일 축하 사이트</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* 추가적인 스타일링을 위한 CSS 코드 작성 */
+  </style>
+</head>
+<body>
+  <header>
+    <h1>생일 축하 사이트</h1>
+  </header>
+
+  <nav>
+    <button id="cameraBtn">카메라</button>
+    <button id="messageBtn">메세지</button>
+  </nav>
+
+  <main>
+    <section id="homeSection">
+      <h2>Home</h2>
+      <img src="image1.jpg" alt="Image 1">
+      <img src="image2.jpg" alt="Image 2">
+    </section>
+
+    <section id="cameraSection" class="hidden">
+      <h2>사진 찍기</h2>
+      <video id="video" width="400" height="300" autoplay></video>
+      <button id="capture">사진 촬영</button>
+      <canvas id="canvas" width="400" height="300"></canvas>
+      <img id="photo" src="#" alt="사진">
+    </section>
+
+    <section id="messageSection" class="hidden">
+      <h2>방명록</h2>
+      <form id="messageForm">
+        <input type="text" id="messageInput" placeholder="메시지를 입력하세요">
+        <button type="submit">전송</button>
+      </form>
+      <ul id="messageList"></ul>
+    </section>
+  </main>
+
+  <audio id="bgMusic" src="background_music.mp3" autoplay loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
