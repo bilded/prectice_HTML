@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>사이트</title>
+  <style>
+    /* 이미지 컨테이너 스타일 */
+    .image-container {
+      display: flex;
+      flex-direction: row;
+    }
+    .image-container img {
+    width: 1000px; /* 이미지의 너비를 200px로 조절 */
+    height: auto; /* 이미지의 높이를 자동으로 조절하여 비율 유지 */
+    align-items: center; /* 수직 가운데 정렬 */
+  }
+    /* 텍스트 컨테이너 스타일 */
+    .text-container {
+      text-align: center;
+      display: none;
+      font-size: 24px; /* 폰트 크기 변경 */
+      color: #f58220; /* 폰트 색상 변경 */
+    }
+    /* 버튼 스타일 */
+    .button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 첫 화면 -->
+    <div id="homeSection">
+      <div class="image-container">
+        <img id="image" src="./pp/letter.jpeg" alt="Image">
+      </div>
+      <button id="startButton" class="button">시작하기</button>
+    </div>
+
+    <!-- "우리 금쪽이" 화면 -->
+    <div id="kumjokSection">
+      <div class="text-container">
+        <h2>우리 금쪽이</h2>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const homeSection = document.getElementById("homeSection");
+      const startButton = document.getElementById("startButton");
+      const kumjokSection = document.getElementById("kumjokSection");
+
+      // "시작하기" 버튼 클릭 이벤트 처리
+      startButton.addEventListener("click", function() {
+        homeSection.style.display = "none";
+        kumjokSection.style.display = "block";
+      });
+    });
+  </script>
+</body>
+</html>

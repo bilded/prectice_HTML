@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>생일 축하 사이트</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+  .image-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .image-container img {
+    width: 800px; /* 이미지의 너비를 400px로 조절 */
+    height: auto; /* 이미지의 높이를 자동으로 조절하여 비율 유지 */
+  }
+  .image1-container img {
+    width: 400px; /* 이미지의 너비를 400px로 조절 */
+    height: auto; /* 이미지의 높이를 자동으로 조절하여 비율 유지 */
+  }
+  .hidden {
+      display: none;
+    }
+
+</style>
+<body>
+  <header>
+    <h1>생일 축하해</h1>
+  </header>
+  <nav>
+    <button id="cameraBtn">카메라</button>
+    <button id="messageBtn">메세지</button>
+    <button id="homeBtn">홈</button>
+    <button id="cakeBtn">케이크</button>
+    <button id="giftBtn">선물</button>
+  </nav>
+
+  <main>
+    <div class="container">
+      <!-- 첫 화면 -->
+      <div id="home1Section">
+        <div class="image-container">
+          <img id="image" src="./pp/letter.png" alt="Image">
+        </div>
+        <button id="startButton" class="button">두근두근 준비 됐어?</button>
+      </div>
+
+    <section id="homeSection" class="hidden">
+      <h2>❤️ 우리 금쪽이의 생일이야 ❤️</h2>
+      <div class="text-container">
+        <p class="sentences" id="sentence1"></p>
+        <p class="sentences" id="sentence2"></p>
+      </div>
+      <div class="image1-container">
+        <img src="./pp/image9.JPG" alt="">
+      </div>
+      <button id="playButton">음악 재생</button>
+    </section>
+
+    
+
+    <section id="cameraSection" class="hidden">
+      <h2>인증샷 찍기</h2>
+      <div class="media-container">
+        <video id="video" width="400" height="300" autoplay></video>
+      </div>
+      <div class="button-container">
+        <button id="capture" class="capture-btn">사진 촬영 📸</button>
+      </div>
+      <canvas id="canvas" width="400" height="300"></canvas>
+    </section>
+
+    <section id="messageSection" class="hidden">
+      <h2>공주들아 방명록 써줘!</h2>
+      <form id="messageForm">
+        <input type="text" id="messageInput" placeholder="메시지를 입력하세요">
+        <button type="submit">전송</button>
+      </form>
+      <div class="guestbook-container">
+        <!-- 글이 작성되는 영역 -->
+        <div class="guestbook-content">
+          <!-- 여기에 작성된 글들이 동적으로 추가됩니다 -->
+          <ul id="messageList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="cakeSection" class="hidden">
+      <h2>생일 축하합니다 🎵<br>생일 축하합니다 🎵</h2>
+      <div class="media-container">
+        <img src="./pp/cake2.gif" alt="Cake GIF">
+        <p>사랑하는 민지의<br>🎂 생일 축하합니다 🎂</p>
+      </div>
+      <button id="cakeButton">우리 노래 부를까?</button>
+    </section>
+
+    <section id="giftSection" class="hidden">
+      <h2>사이트 방문해줘서 고마워!</h2>
+      <p>내가 준비한 선물이야! </p>
+      <div class="gift-container">
+        <img src="./pp/gift1.png" alt="GIFt=1">
+        <img src="./pp/gift2.png" alt="GIFt=2">
+        <img src="./pp/gift3.png" alt="GIFt=3">
+      </div>
+    </section>
+
+
+    
+  </main>
+
+  <script src="script.js" defer></script>>
+
+  <footer>
+    <p>&copy; will always cheer for your future. Happy birthday!</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,341 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #fcebd9;
+  background-image: url("./pp/background.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  overflow: auto;
+}
+
+  header {
+    background-color: #ffd3b6; /* 큰 타이틀 색 변경 */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 32px; /* 폰트 크기 변경 */
+    color: #f58220; /* 폰트 색상 변경 */
+    margin: 0; /* 여백 제거 */
+  }
+  
+  nav {
+    background-color: #ffd3b6 ; /* 상단바 색 조절  #ffd3b6 */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav button {
+    margin: 0 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #f9a03f; /* 배경색 변경 */
+    color: #fff; /* 폰트 색상 변경 */
+    border: none; /* 테두리 제거 */
+    border-radius: 20px; /* 버튼을 둥글게 만들기 */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* 부드러운 효과 추가 */
+  }
+  
+  nav button:hover {
+    background-color: #f58220; /* 버튼 마우스 가져다 두면  배경색 변경 */
+  }
+  
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+  }
+  
+  section {
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 24px; /* 폰트 크기 변경 */
+    color: #f58220; /* 폰트 색상 변경 */
+    margin-top: 0; /* 여백 제거 */
+  }
+
+
+  section.hidden {
+    display: none;
+  }    
+  .captured-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 5px;
+    transform: scaleX(-1);
+    }
+    .capture-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 20px;
+        background-color: #f44336;
+        border: none;
+        border-radius: 50px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .capture-btn i {
+        margin-right: 5px;
+    }
+
+    .capture-btn:hover {
+        background-color: #e53935;
+    }
+
+  
+  #video {
+    transform: scaleX(-1);
+  }
+
+  .media-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+#playButton {
+  background-color: #f9a03f;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+#playButton:hover {
+  background-color: #f58220;
+}
+
+#playButton:focus {
+  outline: none;
+}
+
+.media-container {
+  position: relative;
+  top: -20px;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.captured-photos-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  margin-top: 20px;
+  border: 3px dashed #fcfcfc;
+}
+
+.captured-photo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 10px;
+  border: 3px dashed #fcfcfc;
+}
+
+
+/* 케이크 섹션 스타일 */
+#cakeSection {
+  text-align: center;
+}
+
+/* 미디어 컨테이너 스타일 */
+.media-container {
+  margin-top: 50px; /* 컨테이너 위 여백 50px */
+  
+}
+
+.media-container img {
+  width: 300px;  /* gif크기 조절 */
+  height: auto;
+}
+
+.media-container p {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff5e81;
+  
+}
+
+#home1Section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#startButton {
+  background-color: pink;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#startButton:hover {
+  background-color: hotpink;
+}
+
+
+
+.gift-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.gift-container img {
+  margin-right: 10px; /* 이미지 사이의 간격을 조절할 수 있습니다 */
+  width: 300px; /* 이미지의 너비를 100px로 조절 */
+  height: auto; /* 이미지의 높이를 자동으로 조절하여 비율 유지 */
+} 
+.gift-container p {
+  font-size: 20px; /* 메시지의 글꼴 크기 */
+  color: #ff829d; /* 메시지의 글꼴 색상 */
+  text-align: center; /* 메시지의 정렬 방식 */
+  margin-top: 10px; /* 메시지와 이미지 사이의 간격 */
+  font-weight: bold; /* 메시지의 글꼴 굵기 */
+  text-transform: uppercase; /* 메시지의 대문자 변환 */
+  
+}
+
+/* 문장의 텍스트 귀엽게 꾸미기 */
+.sentences {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  color: #f58220;
+  /* 다른 귀여운 스타일을 추가로 설정할 수 있습니다 */
+}
+
+
+/* 케이크 버튼 스타일 */
+#cakeButton {
+  margin-top: 20px;
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #ff5e81;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#cakeButton:hover {
+  background-color: #ff367c;
+}
+
+#video,
+  .photo-container {
+    display: flex;
+    padding: 15px;
+  }
+  .captured-photo {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #FFF;
+    border-radius: 10px;
+    border: 3px dashed #fcfcfc;
+  }
+  .capture-btn {
+    background-color: #f58220;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(232, 127, 41, 0.731);
+    transition: background-color 0.3s ease;
+  }
+  
+  .capture-btn:hover {
+    background-color: #f58220;
+  }
+  
+  .capture-btn:focus {
+    outline: none;
+  }
+
+  #messageForm {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #messageInput {
+    width: 300px;
+    padding: 5px;
+    font-size: 16px;
+    border: none; /* 테두리 제거 */
+    border-radius: 20px; /* 입력 필드를 둥글게 만들기 */
+    margin-right: 5px; /* 오른쪽 여백 추가 */
+  }
+  
+  #messageInput:focus {
+    outline: none; /* 포커스 시 테두리 제거 */
+  }
+
+  .guestbook-container {
+    max-height: 200px; /* 최대 높이 설정 */
+    overflow-y: auto; /* 수직 스크롤바 설정 */
+  }
+  
+  button[type="submit"] {
+    background-color: #f9a03f; /* 배경색 변경 */
+    color: #fff; /* 폰트 색상 변경 */
+    border: none; /* 테두리 제거 */
+    border-radius: 20px; /* 버튼을 둥글게 만들기 */
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* 부드러운 효과 추가 */
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #f58220; /* 호버 시 배경색 변경 */
+  }
+
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+  ul li {
+    font-size: 16px;
+    color: #f58220; /* 폰트 색상 변경 */
+    margin-bottom: 5px; /* 아이템 간격 추가 */
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color:  #ffd3b6c8;
+    color: #FFF;
+  }

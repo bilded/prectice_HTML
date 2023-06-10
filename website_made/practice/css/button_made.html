@@ -1,0 +1,248 @@
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+  <title>생일 축하 사이트</title>
+  <link rel="stylesheet" href="styles.css"> 
+  <script>
+    // 사진 촬영 기능
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    const photo = document.getElementById('photo');
+    const captureButton = document.getElementById('capture');
+  
+    // 비디오 스트림 가져오기
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => {
+        video.srcObject = stream;
+      })
+      .catch(error => {
+        console.error('사용자 미디어 가져오기 에러:', error);
+      });
+  
+    // 사진 촬영 버튼 클릭 시
+    captureButton.addEventListener('click', () => {
+      // 캔버스에 비디오 프레임 그리기
+      canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+  
+      // 캔버스 이미지를 사진 요소에 할당하여 보여주기
+      const photoURL = canvas.toDataURL();
+      photo.src = photoURL;
+    });
+  
+    // 메시지 작성 기능
+    const messageForm = document.getElementById('message-form');
+    const messagesList = document.getElementById('messages');
+  
+    messageForm.addEventListener('submit', event => {
+      event.preventDefault();
+  
+      const messageInput = document.getElementById('message-input');
+      const message = messageInput.value;
+  
+      const listItem = document.createElement('li');
+      listItem.textContent = message;
+      messagesList.appendChild(listItem);
+  
+      messageInput.value = '';
+    });
+  </script>
+  
+</head>
+<body>
+  <header>
+    <h1>생일 축하해요!</h1>
+  </header>
+  <main>
+    <section id="message">
+      <h2>메시지 남기기</h2>
+      <form>
+        <textarea placeholder="메시지를 입력해주세요"></textarea>
+        <button type="submit">전송</button>
+      </form>
+    </section>
+    <section id="camera">
+      <h2>사진 찍기</h2>
+      <video id="video" width="400" height="300" autoplay></video>
+      <button id="capture">사진 촬영</button>
+      <canvas id="canvas" width="400" height="300"></canvas>
+      <img id="photo" src="#" alt="사진">
+    </section>
+    <section id="message-board">
+      <h2>메시지 보기</h2>
+      <ul id="messages"></ul>
+    </section>
+    <section id="screenshot">
+      <h2>인증샷</h2>
+      <input type="file" accept="image/*"> 
+      <button>업로드</button>
+    </section>
+    <section id="music">
+      <h2>음악 재생</h2>
+      <audio controls>
+        <source src="music.mp3" type="audio/mpeg"> 
+      </audio>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 생일 축하 사이트. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>생일 축하 사이트</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* 추가적인 스타일링을 위한 CSS 코드 작성 */
+  </style>
+</head>
+<body>
+  <header>
+    <h1>생일 축하 사이트</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#home" class="nav-link"><img src="home-icon.png" alt="Home"></a></li>
+      <li><a href="#camera" class="nav-link"><img src="camera-icon.png" alt="Camera"></a></li>
+      <li><a href="#message" class="nav-link"><img src="message-icon.png" alt="Message"></a></li>
+      <li><a href="#music" class="nav-link"><img src="music-icon.png" alt="Music"></a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="home" class="section active">
+      <h2>Home</h2>
+      <!-- 홈화면 내용 추가 -->
+    </section>
+
+    <section id="camera" class="section">
+      <h2>사진 찍기</h2>
+      <div id="camera-container">
+        <video id="video" width="400" height="300" autoplay style="transform: scaleX(-1);"></video> // 화면 좌우반전
+        <button id="capture">사진 촬영</button>
+        <canvas id="canvas" width="400" height="300"></canvas>
+        <img id="photo" src="#" alt="사진">
+      </div>
+    </section>
+
+    <section id="message" class="section">
+      <h2>방명록</h2>
+      <form id="message-form">
+        <input type="text" id="message-input" placeholder="메시지를 입력하세요">
+        <button type="submit">전송</button>
+      </form>
+      <ul id="messages"></ul>
+    </section>
+
+    <section id="music" class="section">
+      <h2>음악 재생</h2>
+      <div id="player"></div>
+      <button id="playButton">재생</button>
+      <button id="pauseButton">일시 정지</button>
+    </section>
+    
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+      // YouTube iframe API를 초기화합니다.
+      let player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          videoId: '6qb7Mc-xAgc',
+          playerVars: {
+            autoplay: 0, // 자동 재생 여부 (0: 비활성화, 1: 활성화)
+            controls: 0, // 재생 컨트롤러 표시 여부 (0: 숨김, 1: 표시)
+            disablekb: 1, // 키보드 제어 비활성화 (0: 활성화, 1: 비활성화)
+            enablejsapi: 1, // JavaScript API 사용 (1: 활성화)
+            fs: 0, // 전체 화면 버튼 표시 여부 (0: 비활성화, 1: 활성화)
+            rel: 0, // 관련 동영상 표시 여부 (0: 비활성화, 1: 활성화)
+            showinfo: 0 // 동영상 정보 표시 여부 (0: 숨김, 1: 표시)
+          },
+          events: {
+            'onReady': onPlayerReady
+          }
+        });
+      }
+    
+      function onPlayerReady(event) {
+        const playButton = document.getElementById('playButton');
+        const pauseButton = document.getElementById('pauseButton');
+    
+        playButton.addEventListener('click', () => {
+          player.playVideo();
+        });
+    
+        pauseButton.addEventListener('click', () => {
+          player.pauseVideo();
+        });
+      }
+    </script>
+    
+  </main>
+
+  <footer>
+    <p>&copy; will always cheer for your future. Happy birthday!</p>
+  </footer>
+
+  <script>
+    // 섹션 전환 기능
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('main section');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const targetSection = document.querySelector(this.getAttribute('href'));
+        sections.forEach(section => section.classList.remove('active'));
+        targetSection.classList.add('active');
+      });
+    });
+
+    // 사진 촬영 기능
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    const photo = document.getElementById('photo');
+    const captureButton = document.getElementById('capture');
+  
+    // 비디오 스트림 가져오기
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => {
+        video.srcObject = stream;
+      })
+      .catch(error => {
+        console.error('사용자 미디어 가져오기 에러:', error);
+      });
+  
+    // 사진 촬영 버튼 클릭 시
+    captureButton.addEventListener('click', () => {
+      // 캔버스에 비디오 프레임 그리기
+      canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+  
+      // 캔버스 이미지를 사진 요소에 할당하여 보여주기
+      const photoURL = canvas.toDataURL();
+      photo.src = photoURL;
+    });
+  
+    // 메시지 작성 기능
+    const messageForm = document.getElementById('message-form');
+    const messagesList = document.getElementById('messages');
+  
+    messageForm.addEventListener('submit', event => {
+      event.preventDefault();
+  
+      const messageInput = document.getElementById('message-input');
+      const message = messageInput.value;
+  
+      const listItem = document.createElement('li');
+      listItem.textContent = message;
+      messagesList.appendChild(listItem);
+  
+      messageInput.value = '';
+    });
+  </script>
+  
+</body>
+</html>
